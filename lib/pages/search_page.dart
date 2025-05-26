@@ -108,13 +108,7 @@ class _SearchPageState extends State<SearchPage> {
               if (_isLoading)
                 const Center(child: CircularProgressIndicator())
               else if (_error.isNotEmpty)
-                Padding(
-                  padding: EdgeInsetsGeometry.all(8),
-                  child: Text(
-                    _error,
-                    style: const TextStyle(color: Colors.red),
-                  ),
-                )
+                Text(_error, style: const TextStyle(color: Colors.red))
               else if (_movies.isEmpty)
                 const Center(child: Text("No movies found! Please search"))
               else
@@ -124,7 +118,12 @@ class _SearchPageState extends State<SearchPage> {
                     itemBuilder: (context, index) {
                       Movie movie = _movies[index];
                       return Column(
-                        children: [SearchDetailWidget(movie: movie)],
+                        children: [
+                          SearchDetailWidget(movie: movie),
+                          const SizedBox(height: 5),
+                          Divider(),
+                          const SizedBox(height: 5),
+                        ],
                       );
                     },
                   ),

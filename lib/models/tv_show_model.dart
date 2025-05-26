@@ -16,11 +16,11 @@ class TvShow {
   //from json to dart
   factory TvShow.fromJson(Map<String, dynamic> json) {
     return TvShow(
-      name: json['name'] ?? "",
-      posterPath: json['posterPath'] as String?,
-      overview: json['overview'] ?? "",
-      voteAverage: (json['voteAverage'] ?? 0).toDouble(),
-      firstAirDate: json['firstAirDate'] ?? "",
+      name: json['name'],
+      posterPath: json['poster_path'],
+      overview: json['overview'],
+      voteAverage: json['vote_average'].toDouble(),
+      firstAirDate: json['first_air_date'],
     );
   }
 }

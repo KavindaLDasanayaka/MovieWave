@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moviewave/models/movie_model.dart';
+import 'package:moviewave/pages/single_movie_page.dart';
 import 'package:moviewave/services/movie_service.dart';
 import 'package:moviewave/widgets/movie_detail_widget.dart';
 
@@ -82,7 +83,17 @@ class _HomePageState extends State<HomePage> {
               return const Center(child: CircularProgressIndicator());
             } else {
               Movie movie = _movies[index];
-              return MovieDetailWidget(movie: movie);
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SingleMoviePage(movie: movie),
+                    ),
+                  );
+                },
+                child: MovieDetailWidget(movie: movie),
+              );
             }
           },
         ),
