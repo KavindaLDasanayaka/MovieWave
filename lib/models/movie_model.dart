@@ -23,7 +23,7 @@ class Movie {
     required this.originalTitle,
     required this.overview,
     required this.popularity,
-    required this.posterPath,
+    this.posterPath,
     required this.releaseDate,
     required this.title,
     required this.video,
@@ -31,23 +31,22 @@ class Movie {
     required this.voteCount,
   });
 
-  //from jason to dart
   factory Movie.fromJson(Map<String, dynamic> json) {
     return Movie(
       adult: json['adult'] ?? false,
-      backdropPath: json['backdropPath'] as String?,
-      genreIds: List<int>.from(json['genreIds'] ?? []),
+      backdropPath: json['backdrop_path'] as String?, // cast to nullable String
+      genreIds: List<int>.from(json['genre_ids'] ?? []),
       id: json['id'] ?? 0,
-      originalLanguage: json['originalLanguage'] ?? "",
-      originalTitle: json['originalTitle'] ?? "",
-      overview: json['overview'] ?? "",
+      originalLanguage: json['original_language'] ?? '',
+      originalTitle: json['original_title'] ?? '',
+      overview: json['overview'] ?? '',
       popularity: (json['popularity'] ?? 0).toDouble(),
-      posterPath: json['posterPath'] as String?,
-      releaseDate: json['releaseDate'] ?? "",
-      title: json['title'] ?? "",
+      posterPath: json['poster_path'] as String?, // cast to nullable String
+      releaseDate: json['release_date'] ?? '',
+      title: json['title'] ?? '',
       video: json['video'] ?? false,
-      voteAverage: (json['voteAverage'] ?? 0).toDouble(),
-      voteCount: json['voteCount'] ?? 0,
+      voteAverage: (json['vote_average'] ?? 0).toDouble(),
+      voteCount: json['vote_count'] ?? 0,
     );
   }
 }
