@@ -4,8 +4,8 @@ import 'package:moviewave/services/movie_service.dart';
 import 'package:moviewave/widgets/search_detail.dart';
 
 class SingleMoviePage extends StatefulWidget {
-  Movie movie;
-  SingleMoviePage({super.key, required this.movie});
+  final Movie movie;
+  const SingleMoviePage({super.key, required this.movie});
 
   @override
   State<SingleMoviePage> createState() => _SingleMoviePageState();
@@ -184,7 +184,7 @@ class _SingleMoviePageState extends State<SingleMoviePage> {
             //mekedi wenne aye movie ekak hadagnnawa
             onTap: () {
               setState(() {
-                widget.movie = movie;
+                // widget.movie = movie;
                 _fetchSimilarMovies();
                 _fetchImages();
                 _fetchRecommendedMovies();

@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+// import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:moviewave/models/tv_show_model.dart';
 import 'package:http/http.dart' as http;
 
 class TvShowsService {
   //api key
-  final String _apiKey = dotenv.env['TMDB_DATABASE_KEY'] ?? "";
+  final String _apiKey = "";
 
   Future<List<TvShow>> fetchTvShows() async {
     try {
