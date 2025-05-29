@@ -7,8 +7,8 @@ import 'package:moviewave/core/services/injection_container.dart';
 import 'package:moviewave/core/services/router.dart';
 import 'package:moviewave/core/utils/core_utils.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:moviewave/csrc/movie/presentation/bloc/movie_bloc.dart';
-import 'package:moviewave/csrc/tv_show/presentation/bloc/tv_show_bloc.dart';
+import 'package:moviewave/src/movie/presentation/bloc/movie_bloc.dart';
+import 'package:moviewave/src/tv_show/presentation/bloc/tv_show_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
